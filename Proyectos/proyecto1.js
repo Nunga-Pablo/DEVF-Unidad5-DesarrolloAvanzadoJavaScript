@@ -21,7 +21,8 @@ function addOrder(order)
 function updateOrderStatus(order, status) 
 {
     const listItem = document.getElementById(`order-${order.id}`);
-    if (listItem) {
+    if (listItem) 
+    {
         listItem.textContent = `Pedido #${order.id}: ${status}`;
     }
 }
@@ -29,5 +30,25 @@ function updateOrderStatus(order, status)
 async function processOrder(order) 
 {
     // TODO: Simular la preparación del pedido usando setTimeout y Promise
+    const promesa = new Promise((resolve, reject) => 
+    {
+        setTimeout(() => resolve(), 1000);
+    });
+
+    promesa.then(resultado => 
+    {
+        const listItem = document.createElement('p');
+        listItem.id = `order-${order.id}`;
+        listItem.textContent = `Preparando pedido #${order.id}`;
+        orderList.appendChild(listItem);
+    });
     // TODO: Actualizar el estado del pedido a "Completado"
+    setTimeout(() => 
+    {
+        const listItem = document.createElement('p');
+        listItem.id = `order-${order.id}`;
+        listItem.textContent = `Pedido #${order.id} realizado`;
+        orderList.appendChild(listItem);
+        updateOrderStatus(order, "Completado");
+    }, 3000);
 }
