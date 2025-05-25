@@ -28,7 +28,7 @@ function mostrarLibros()
         console.log("Inventario de libros:");
         datos.libros.forEach((libro, index) => 
         {
-            console.log(`${index + 1}. ${libro.titulo} - ${libro.autor} (${libro.disponible ? 'Disponible' : 'Prestado'})`);
+            console.log(`${index + 1}. ${libro.titulo} - ${libro.autor}, ${libro.genero} (${libro.disponible ? 'Disponible' : 'Prestado'})`);
         });
     });
 }
@@ -42,6 +42,7 @@ function agregarLibro(titulo, autor, genero, disponible)
     setTimeout(() =>
     {
         // Pista: deberías agregar el nuevo libro a `biblioteca.libros`
+        biblioteca.libros.push(nuevoLibro)
     }, 1000);
 }
 
@@ -53,10 +54,38 @@ function actualizarDisponibilidad(titulo, nuevoEstado)
     setTimeout(() => 
     {
         // Pista: busca el libro por título y cambia la propiedad 'disponible' a nuevoEstado
+        let libroActualizar = biblioteca.libros.find(libro => libro.titulo === titulo)
+        libroActualizar.disponible = nuevoEstado;
     }, 1000);
 }
 
+function consultarInventario(titulo) 
+{
+    // Simula un retraso antes de actualizar la disponibilidad
+    setTimeout(() => 
+    {
+        // Pista: busca el libro por título y cambia la propiedad 'disponible' a nuevoEstado
+        let libroBuscar = biblioteca.libros.find(libro => libro.titulo === titulo)
+        
+        if (libroBuscar) 
+        {
+            console.log("Si tenemos el libro '" + titulo + "'");
+        } 
+        else 
+        {
+            console.log("Libro '" + titulo + "' no encontrado");
+        }
+        }, 1000);
+}
+
 // Ejemplo de cómo ejecutar la aplicación
+
 mostrarLibros();
 agregarLibro("El principito", "Antoine de Saint-Exupéry", "Fábula", true);
+mostrarLibros();
+
+consultarInventario("Cien años de soledad");
+consultarInventario("Fahrenheit 541");
+
 actualizarDisponibilidad("1984", false);
+mostrarLibros();
