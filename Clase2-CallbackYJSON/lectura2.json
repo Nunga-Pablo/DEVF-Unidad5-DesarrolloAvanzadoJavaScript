@@ -1,0 +1,9 @@
+{
+  "nombre": "Carlos",
+
+  "edad": 25,
+
+  "esEstudiante": true,
+
+  "materias": ["Matemáticas", "Física", "Programación"]
+}
