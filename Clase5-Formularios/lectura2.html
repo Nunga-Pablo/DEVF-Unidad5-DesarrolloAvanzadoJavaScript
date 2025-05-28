@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--Checkboxes-->
+    <form>
+        <label>
+            <input type="checkbox" name="intereses" value="deportes"> Deportes
+        </label>
+        
+        <label>
+            <input type="checkbox" name="intereses" value="música"> Música
+        </label>
+
+        <label>
+            <input type="checkbox" name="intereses" value="arte"> Arte
+        </label>
+    </form>
+
+    <!--Radio buttons-->
+
+    <form>
+        <label>
+            <input type="radio" name="genero" value="masculino"> Masculino
+        </label>
+        <label>
+            <input type="radio" name="genero" value="femenino"> Femenino
+        </label>
+        <label>
+            <input type="radio" name="genero" value="otro"> Otro
+        </label>
+    </form>
+
+    <!--Menús Desplegables-->
+    <form>
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" name="ciudad">
+            <option value="cdmx">Ciudad de México</option>
+            <option value="guadalajara">Guadalajara</option>
+            <option value="monterrey">Monterrey</option>
+        </select>
+    </form>
+
+
+    <!--Campos de Fecha y Hora-->
+    <form>
+        <label for="fecha">Fecha de nacimiento:</label>
+            <input type="date" id="fecha" name="fecha">
+        <label for="hora">Hora de la cita:</label>
+            <input type="time" id="hora" name="hora">
+    </form>
+
+    <!-- Campos de Archivo-->
+    <form>
+        <label for="archivo">Sube un archivo:</label>
+        <input type="file" id="archivo" name="archivo">
+    </form>
+
+</body>
+</html>
