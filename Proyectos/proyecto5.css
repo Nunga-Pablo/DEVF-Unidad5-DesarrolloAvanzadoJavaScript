@@ -1,0 +1,109 @@
+ /* Estilos básicos para el formulario */
+body 
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* Estilo del contenedor del formulario */
+form 
+{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 30px 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Título */
+h1 
+{
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Etiquetas */
+label 
+{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Inputs, selects y botón */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="file"],
+select 
+{
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Checkbox y radio (alineación horizontal más clara) */
+input[type="checkbox"],
+input[type="radio"] 
+{
+    margin-right: 8px;
+}
+
+/* Intereses y horarios en filas separadas */
+label input[type="checkbox"],
+label input[type="radio"] 
+{
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Intereses y horarios de forma horizontal */
+.grupo-horizontal 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.grupo-horizontal label 
+{
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Botón */
+button 
+{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover 
+{
+    background-color: #0056b3;
+}

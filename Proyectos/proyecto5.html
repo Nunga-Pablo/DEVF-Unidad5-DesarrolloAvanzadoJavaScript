@@ -4,30 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Eventos</title>
-    <style>
-        /* Estilos básicos para el formulario */
-        form 
-        {
-            width: 50%;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        label 
-        {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select, button 
-        {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <script src="proyecto5.js" defer></script>
+    <link rel="stylesheet" href="proyecto5.css">
 </head>
 
 <body>
@@ -43,14 +21,25 @@
         <input type="tel" id="telefono" name="telefono" required>
 
         <label>Intereses:</label>
-        <label><input type="checkbox" name="intereses" value="tecnología"> Tecnología</label>
-        <label><input type="checkbox" name="intereses" value="negocios"> Negocios</label>
-        <label><input type="checkbox" name="intereses" value="arte"> Arte</label>
+            <div class="grupo-horizontal">
+                <label><input type="checkbox" name="intereses" value="tecnología"> Tecnología</label>
+                <label><input type="checkbox" name="intereses" value="negocios"> Negocios</label>
+                <label><input type="checkbox" name="intereses" value="arte"> Arte</label>
+            </div>
 
         <label>Horario preferido:</label>
-        <label><input type="radio" name="horario" value="mañana" required> Mañana</label>
-        <label><input type="radio" name="horario" value="tarde"> Tarde</label>
-        <label><input type="radio" name="horario" value="noche"> Noche</label>
+            <div class="grupo-horizontal">
+                <label><input type="radio" name="horario" value="mañana" required> Mañana</label>
+                <label><input type="radio" name="horario" value="tarde"> Tarde</label>
+                <label><input type="radio" name="horario" value="noche"> Noche</label>
+            </div>
+
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" name="ciudad">
+            <option value="cdmx">Ciudad de México</option>
+            <option value="guadalajara">Guadalajara</option>
+            <option value="monterrey">Monterrey</option>
+        </select>
 
         <label for="fecha">Fecha del evento:</label>
         <input type="date" id="fecha" name="fecha" required>
@@ -63,30 +52,5 @@
 
         <button type="submit">Registrarse</button>
     </form>
-
-    <script>
-        document.getElementById('registroEvento').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío automático del formulario
-
-        // Variables
-        const nombre = document.getElementById('nombre').value;
-        const correo = document.getElementById('correo').value;
-        const telefono = document.getElementById('telefono').value;
-        const intereses = document.querySelectorAll('input[name="intereses"]:checked');
-        const horario = document.querySelector('input[name="horario"]:checked');
-        const fecha = document.getElementById('fecha').value;
-        const hora = document.getElementById('hora').value;
-
-        // Validaciones básicas
-        if (!nombre || !correo || !telefono || intereses.length === 0 || !horario) 
-        {
-            alert('Por favor, completa todos los campos obligatorios.');
-            return;
-        }
-
-        // Si todo está bien
-            alert('Registro exitoso. ¡Gracias por registrarte!');
-        });
-    </script>
 </body>
 </html>
